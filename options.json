@@ -1,0 +1,8 @@
+{
+  "interval": "5",
+  "commitMessage": "Backup %e",
+  "elasticsearchUrls": {
+  },
+  "promoteMap": {
+  }
+}

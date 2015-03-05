@@ -1,0 +1,23 @@
+{
+  "limit":           100,
+  "offset":          0,
+  "debug":           false,
+  "type":            "data",
+  "delete":          false,
+  "all":             false,
+  "bulk":            false,
+  "maxSockets":      null,
+  "input":           null,
+  "output":          null,
+  "format":          "",
+  "ignore-errors":   false,
+  "scrollTime":      "10m",
+  "bulk-use-output-index-name": false,
+  "searchBody":      {
+    "query": { 
+      "match_all": {} 
+    } 
+  },
+  "timeout":         null,
+  "skip":            null
+}

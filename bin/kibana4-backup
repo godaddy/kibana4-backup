@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var path = require('path');
+var backup = require(path.resolve(__dirname, '../kibana4-backup'));
+
+backup(function(err, results){
+  console.log(err);
+  //console.log(results);
+});

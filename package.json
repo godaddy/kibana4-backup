@@ -1,0 +1,38 @@
+{
+  "name": "kibana4-backup",
+  "version": "1.0.0",
+  "description": "Backup, restore, and promote changes to your Kibana4 instances",
+  "main": "kibana4-backup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/godaddy/kibana4-backup.git"
+  },
+  "keywords": [
+    "kibana",
+    "kibana4",
+    "backup",
+    "restore",
+    "promote"
+  ],
+  "author": {
+    "name": "Grant Shively",
+    "email": "gshively@godaddy.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/godaddy/kibana4-backup/issues"
+  },
+  "homepage": "https://github.com/godaddy/kibana4-backup",
+  "dependencies": {
+    "async": "^0.9.0",
+    "elasticdump": "^0.11.0",
+    "lodash": "^3.3.1",
+    "mkdirp": "^0.5.0",
+    "request": "^2.53.0",
+    "rimraf": "^2.2.8",
+    "simple-git": "^0.14.0"
+  }
+}
