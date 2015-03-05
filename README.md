@@ -1,7 +1,7 @@
 kibana4-backup
 ==============
 
-**WORK IN PROGRESS, UNSTABLE**
+**WORK IN PROGRESS.  Stability: 1 - Experimental**
 
 Backup, restore, and deploy changes to Kibana 4 configs, index-patterns, dashboards, searches, and visualizations.
 
