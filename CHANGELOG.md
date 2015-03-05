@@ -1,3 +1,9 @@
+## 0.2.1 (February 5, 2015)
+
+Bug Fixes:
+
+  - Fixed write perm issue with temp directory not honoring -d option
+
 ## 0.2.0 (February 5, 2015)
 
 Features:
