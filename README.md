@@ -3,7 +3,7 @@ kibana4-backup
 
 **WORK IN PROGRESS.  Stability: 1 - Experimental**
 
-[![Build Status](https://api.travis-ci.org/godaddy/kibana4-backup.png)](https://travis-ci.org/godaddy/kibana4-backup)
+[![Build Status](https://api.travis-ci.org/godaddy/kibana4-backup.png)](https://travis-ci.org/godaddy/kibana4-backup) [![npm version](https://badge.fury.io/js/kibana4-backup.svg)](http://badge.fury.io/js/kibana4-backup)
 
 Backup, restore, and deploy changes to Kibana 4 configs, index-patterns, dashboards, searches, and visualizations.
 
