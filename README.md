@@ -1,6 +1,8 @@
 kibana4-backup
 ==============
 
+**WORK IN PROGRESS, UNSTABLE**
+
 Backup, restore, and promote changes to Kibana 4 configs, index-patterns, dashboards, searches, and visualizations.
 
 The intention of kibana4-backup is to make sure any changes you make to your Kibana 4 instance will be backed up in source control, with the ability to easily restore them.  Furthermore, it provides a way to promote changes between different environments (i.e. elasticsearch clusters).
