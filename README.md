@@ -13,6 +13,7 @@ The intention of kibana4-backup is to make sure any changes you make to your Kib
 * The user you run `kibana4-backup` as must have SSH access to your backup repo
 * The ssh private key MUST NOT have a passphrase
 * The box you install kibana4-backup on must have firewall access to the elasticsearch HTTP url
+* You have an empty git repository where you want to store your kibana4 configs, index-patterns, dashboards, searches, and visualizations.
 
 # Usage
 

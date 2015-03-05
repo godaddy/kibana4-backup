@@ -1,1 +1,0 @@
-This is where you can place files to be deployd to the next environment (controled by deployMap in options).  Once the files have been deployed to the next environment, they will be automatically deleted.

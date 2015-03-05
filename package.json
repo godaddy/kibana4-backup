@@ -4,7 +4,7 @@
   "description": "Backup, restore, and deploy changes to your Kibana4 instances",
   "main": "kibana4-backup.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jshint kibana4-backup.js lib"
   },
   "bin": {
     "kibana4-backup": "./bin/kibana4-backup"
@@ -38,5 +38,8 @@
     "lodash": "^3.3.1",
     "request": "^2.53.0",
     "simple-git": "^0.14.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.6.3"
   }
 }

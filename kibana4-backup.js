@@ -13,6 +13,7 @@ var restore = require('./lib/restore');
 var deploy = require('./lib/deploy');
 var backup = require('./lib/backup');
 var commit = require('./lib/git/commit');
+var push = require('./lib/git/push');
 
 module.exports = kibana4Backup;
 
@@ -27,11 +28,13 @@ function kibana4Backup(cb){
     restore,
     deploy,
     backup,
-    commit
+    commit,
+    push
   ], function(err, results){
     if(err) {
+      console.error('kibana4-backup failed');
       console.error(err);
-      return cb(new Error('kibana4-backup failed'));
+      return cb(err);
     }
     debug(results);
     console.log('kibana4-backup complete');
