@@ -65,6 +65,7 @@ kibana4-backup --help
     -V, --version                   output the version number
     -r, --repo <url>                REQUIRED - git repo to store kibana4 data
     -s, --elasticsearch-url <url>   REQUIRED - elasticsearch http url you want to target
+    -d, --clone-directory <path>    RECOMMENDED - the directory to clone the git repo to, should be an absolute path, must have write access
     -e, --environment <env>         the environment you want to target
     -c, --commit-message <message>  commit message to use when changes are made
 ```
