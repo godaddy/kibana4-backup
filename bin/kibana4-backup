@@ -5,7 +5,8 @@
 var path = require('path');
 var backup = require(path.resolve(__dirname, '../kibana4-backup'));
 
-backup(function(err, results){
-  console.log(err);
-  //console.log(results);
+backup(function(err){
+  if(err)
+    process.exit(1);
+  process.exit(0);
 });

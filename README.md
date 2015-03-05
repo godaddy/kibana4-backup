@@ -7,53 +7,49 @@ Backup, restore, and promote changes to Kibana 4 configs, index-patterns, dashbo
 
 The intention of kibana4-backup is to make sure any changes you make to your Kibana 4 instance will be backed up in source control, with the ability to easily restore them.  Furthermore, it provides a way to promote changes between different environments (i.e. elasticsearch clusters).
 
-# How to use
+# Prerequistes
 
-1. Fork this repo to your own GitHub organization
-2. Clone your forked repo to a server where you will run the backup process
-3. Modify ./options.json to your liking
-4. Run `./kibana4-backup` (you may want to daemonize it with your own process manager)
+* The box you install kibana4-backup on must have git installed
+* The user you run `./kibana4-backup` as must have SSH access to your backup repo
+* The ssh private key MUST NOT have a passphrase
+* The box you install kibana4-backup on must have firewall access to the elasticsearch HTTP url
 
-## Backup
+# Usage
 
-Backup starts as soon as you run `./kibana4-backup`.  At the configured interval, the .kibana index will be pulled, and any new configs/index-patterns/dashboards/searches/visualizations will be saved to the correct environment/backup folder.  The changes will then be committed and pushed to the GitHub repo.
+```
+npm install -g kibana4-backup
+kibana4-backup --elasticsearch-url http://myelasticsearch.com:9200 --repo git@github.com:myorg/myrepo.git
+```
+
+We leave process management up to you.  Running kibana4-backup from the command line will only run it a single time.  You could create a cron to run it at an interval.  In the future we'd like to daemonize this an provide a way to run it at an interval.
 
 ## Restore
 
-If the .kibana index does not exist, the latest backup files for that environment will be PUT'd to the index.
+The restore logic is the first step in the process.  If the .kibana index does not exist, the latest backup files from the repo/environment you specify will be PUT'd to the index.
 
 ## Promote
 
-Promoting a change from one environment to the next is as easy as copying the files from the source environment's backup folder and pasting them into the target environments promote folder.
+TBD
+
+## Backup
+
+The last step in the process is to perform the backup. The .kibana index will be pulled from elasticsearch and any new configs/index-patterns/dashboards/searches/visualizations will be saved to the correct environment/backup folder.  The changes will then be committed and pushed to the GitHub repo.
 
 # Options
 
-Options are configured in options.json.
-
-* `interval` -- int: Run backup/restore/promote every X seconds.  Default is `5`.
-* `commitMessage` -- string/pattern: The commit message to use when commiting changes caused by a backup. Default is `'Backup %e'`
-  * %e will be replaced by the NODE_ENV value
-* `elasticsearchUrls` -- object REQUIRED: This is a mapping between your NODE_ENV and the elasticsearch HTTP endpoint you want to backup.  The key should be the NODE_ENV value, and the value should be the url to your elasticsaerch HTTP endpoint.  e.g.
-```json
-{
-  "elasticsearchUrls": {
-    "dev": "http://mydevelasticseach.com:9200/",
-    "prod": "http://myelasticseach.com:9200/",
-  }
-}
 ```
-* 'promoteMap' -- object REQUIRED: This is a mapping between your NODE_ENV and the NODE_ENV it should target when promoting changes.  The key is the source NODE_ENV and the value is the target NODE_ENV. e.g.
-```json
-{
-  "promoteMap": {
-    "dev": "test",
-    "test": "prod"
-  }
-}
-```
-# Requirements
+kibana4-backup --help
 
-* The server you clone your fork to must have git installed (obviously)
-* The user you run `./kibana4-backup` as must have SSH access to your forked repo
-* The server you clone your fork to must have access to the elasticsearch HTTP endpoint
-* You must define a NODE_ENV environment variable corresponding the environment you're running in (no whitespace)
+  Usage: kibana4-backup [options]
+
+  Options:
+
+    -h, --help                       output usage information
+    -V, --version                    output the version number
+    -r, --repo <url>                 REQUIRED - git repo to store kibana4 data
+    -s, --elasticsearch-url <url>    REQUIRED - elasticsearch http url you want to backup
+    -e, --environment <env>          the environment you are targetting for backup
+    -p, --promote-environment <env>  the environment you are targetting for promotion
+    -t, --promote-url <url>          elasticsearch http url you want to target for promote
+    -c, --commit-message <message>   commit message to use during backup
+```

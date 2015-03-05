@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "kibana4-backup": "./bin/kibana4-backup"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/godaddy/kibana4-backup.git"
@@ -28,11 +31,12 @@
   "homepage": "https://github.com/godaddy/kibana4-backup",
   "dependencies": {
     "async": "^0.9.0",
+    "commander": "^2.6.0",
+    "debug": "^2.1.2",
     "elasticdump": "^0.11.0",
+    "fs-extra": "^0.16.4",
     "lodash": "^3.3.1",
-    "mkdirp": "^0.5.0",
     "request": "^2.53.0",
-    "rimraf": "^2.2.8",
     "simple-git": "^0.14.0"
   }
 }
