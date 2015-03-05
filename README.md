@@ -23,16 +23,17 @@ The intention of kibana4-backup is to make sure any changes you make to your Kib
 
 ```
 npm install -g kibana4-backup
-kibana4-backup --elasticsearch-url http://myelasticsearch.com:9200 --repo git@github.com:myorg/myrepo.git
+kibana4-backup --clone-directory /tmp/kibana4-backup --elasticsearch-url http://myelasticsearch.com:9200 --repo git@github.com:myorg/myrepo.git
 ```
 
-The commands above will install kibana4-backup and run it once, targetting the specified elasticsearch instance and git repository.  It will restore (if applicable), deploy (if applicable), and backup items under the .kibana index.  More on this process in the sections below.
+The commands above will install kibana4-backup and run it once, targetting the specified elasticsearch instance and git repository.  It will restore (if applicable), deploy (if applicable), and backup items under the .kibana index.  It will do all its work in the /tmp/kibana4-backup directory (creating it if it doesn't exist).  Specifying the directory isn't required, but it's recommended, as the default will be inside the node_module's installation directory, which you may not have access to in a global install.  More on the restore/deploy/backup process in the sections below.
 
 ```
 kibana4-backup \
-    --elasticsearch-url http://mytestelasticsearch.com:9200 \
-    --repo git@github.com:myorg/myrepo.git \
-    --environment test
+    -s http://mytestelasticsearch.com:9200 \
+    -r git@github.com:myorg/myrepo.git \
+    -e test
+    -d /tmp/kibana4-backup
 ```
 
 The command above will run kibana4-backup, targetting a specific environment.  If you have multiple elasticsearch instances in different environments, you can move kibana4 dashboards, searches, and visualizations between environments easily using the deploy feature.  Each environment will exist as a different folder in the git repo specified.  Specifying the environment will cause kibana4-backup to target the related environment folder for restore/deploy/backup operations.
@@ -64,6 +65,7 @@ kibana4-backup --help
     -V, --version                   output the version number
     -r, --repo <url>                REQUIRED - git repo to store kibana4 data
     -s, --elasticsearch-url <url>   REQUIRED - elasticsearch http url you want to target
+    -d, --clone-directory <path>    RECOMMENDED - the directory to clone the git repo to, should be an absolute path, must have write access
     -e, --environment <env>         the environment you want to target
     -c, --commit-message <message>  commit message to use when changes are made
 ```
