@@ -28,10 +28,10 @@ Promoting a change from one environment to the next is as easy as copying the fi
 
 Options are configured in options.json.
 
-`interval` -- int: Run backup/restore/promote every X seconds.  Default is `5`.
-`commitMessage` -- string/pattern: The commit message to use when commiting changes caused by a backup. Default is `'Backup %e'`
-* %e will be replaced by the NODE_ENV value
-`elasticsearchUrls` -- object REQUIRED: This is a mapping between your NODE_ENV and the elasticsearch HTTP endpoint you want to backup.  The key should be the NODE_ENV value, and the value should be the url to your elasticsaerch HTTP endpoint.  e.g.
+* `interval` -- int: Run backup/restore/promote every X seconds.  Default is `5`.
+* `commitMessage` -- string/pattern: The commit message to use when commiting changes caused by a backup. Default is `'Backup %e'`
+  * %e will be replaced by the NODE_ENV value
+* `elasticsearchUrls` -- object REQUIRED: This is a mapping between your NODE_ENV and the elasticsearch HTTP endpoint you want to backup.  The key should be the NODE_ENV value, and the value should be the url to your elasticsaerch HTTP endpoint.  e.g.
 ```json
 {
   "elasticsearchUrls": {
@@ -40,7 +40,7 @@ Options are configured in options.json.
   }
 }
 ```
-'promoteMap' -- object REQUIRED: This is a mapping between your NODE_ENV and the NODE_ENV it should target when promoting changes.  The key is the source NODE_ENV and the value is the target NODE_ENV. e.g.
+* 'promoteMap' -- object REQUIRED: This is a mapping between your NODE_ENV and the NODE_ENV it should target when promoting changes.  The key is the source NODE_ENV and the value is the target NODE_ENV. e.g.
 ```json
 {
   "promoteMap": {
