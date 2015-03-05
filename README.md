@@ -3,7 +3,7 @@ kibana4-backup
 
 **WORK IN PROGRESS.  Stability: 1 - Experimental**
 
-[![Build Status](https://api.travis-ci.org/godaddy/kibana4-backup.png)](https://travis-ci.org/godaddy/kibana4-backup) [![npm version](https://badge.fury.io/js/kibana4-backup.svg)](http://badge.fury.io/js/kibana4-backup)
+[![Build Status](https://api.travis-ci.org/godaddy/kibana4-backup.png)](https://travis-ci.org/godaddy/kibana4-backup)
 
 [![NPM](https://nodei.co/npm/kibana4-backup.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kibana4-backup/)
 
@@ -68,4 +68,12 @@ kibana4-backup --help
     -d, --clone-directory <path>    RECOMMENDED - the directory to clone the git repo to, should be an absolute path, must have write access
     -e, --environment <env>         the environment you want to target
     -c, --commit-message <message>  commit message to use when changes are made
+```
+
+# Other Stuff
+
+We are using [debug](https://github.com/visionmedia/debug), name is 'kibana4-backup'.
+
+```
+export DEBUG=kibana4-backup && kibana4-backup ......
 ```
