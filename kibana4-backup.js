@@ -10,7 +10,7 @@ var getLatest = require('./lib/git/get-latest');
 var createDirectories = require('./lib/create-directories');
 var createReadmes = require('./lib/readmes/create');
 var restore = require('./lib/restore');
-var promote = require('./lib/promote');
+var deploy = require('./lib/deploy');
 var backup = require('./lib/backup');
 var commit = require('./lib/git/commit');
 
@@ -25,7 +25,7 @@ function kibana4Backup(cb){
     createDirectories,
     createReadmes,
     restore,
-    promote,
+    deploy,
     backup,
     commit
   ], function(err, results){

@@ -1,7 +1,7 @@
 {
   "name": "kibana4-backup",
   "version": "0.1.0",
-  "description": "Backup, restore, and promote changes to your Kibana4 instances",
+  "description": "Backup, restore, and deploy changes to your Kibana4 instances",
   "main": "kibana4-backup.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +18,7 @@
     "kibana4",
     "backup",
     "restore",
-    "promote"
+    "deploy"
   ],
   "author": {
     "name": "Grant Shively",
