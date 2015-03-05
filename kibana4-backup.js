@@ -20,7 +20,7 @@ module.exports = kibana4Backup;
 function kibana4Backup(cb){
   debug('Starting kibana4 backup');
   async.series([
-    _.partial(fs.mkdirs, config.repoBaseDir),
+    _.partial(fs.mkdirs, config.cloneDir),
     clone,
     getLatest,
     createDirectories,
