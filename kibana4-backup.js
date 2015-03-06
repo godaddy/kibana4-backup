@@ -28,8 +28,8 @@ function kibana4Backup(cb){
     restore,
     deploy,
     backup,
-    // commit,
-    // push
+    commit,
+    push
   ], function(err, results){
     if(err) {
       console.error('kibana4-backup failed');
