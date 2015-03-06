@@ -1,6 +1,6 @@
 {
   "name": "kibana4-backup",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Backup, restore, and deploy changes to your Kibana4 instances",
   "main": "kibana4-backup.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "fs-extra": "^0.16.4",
     "lodash": "^3.3.1",
     "request": "^2.53.0",
+    "sanitize-filename": "^1.1.5",
     "simple-git": "^0.14.0"
   },
   "devDependencies": {

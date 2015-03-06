@@ -1,3 +1,10 @@
+## 0.2.2 (February 6, 2015)
+
+Bug Fixes:
+
+  - Fixed file creation failure when kibana assets are saved with invalid filename characters
+  - Now ensuring that spaces are encoded properly in urls
+
 ## 0.2.1 (February 5, 2015)
 
 Bug Fixes:
