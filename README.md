@@ -7,7 +7,7 @@ kibana4-backup
 
 [![NPM](https://nodei.co/npm/kibana4-backup.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kibana4-backup/)
 
-Backup, restore, and deploy changes to Kibana 4 configs, index-patterns, dashboards, searches, and visualizations.
+Backup, restore, and deploy changes to Kibana 4 configs, index-patterns, dashboards, searches, and visualizations.  *It also works for Kibana 3*.  We created the project before realizing it though, hence the name :).
 
 The intention of kibana4-backup is to make sure any changes you make to your Kibana 4 instance will be backed up in source control, with the ability to easily restore them.  Furthermore, it provides a way to deploy changes from source control, to specific environments.  Deploying a dashboard from test to prod is as easy as copying a file into a different folder and commiting the change.
 
@@ -55,19 +55,18 @@ The last step in the process is to perform the backup. The .kibana index will be
 # Options
 
 ```
-kibana4-backup --help
-
-  Usage: kibana4-backup [options]
+kibana4-backup [options]
 
   Options:
 
     -h, --help                      output usage information
     -V, --version                   output the version number
-    -r, --repo <url>                REQUIRED - git repo to store kibana4 data
-    -s, --elasticsearch-url <url>   REQUIRED - elasticsearch http url you want to target
-    -d, --clone-directory <path>    RECOMMENDED - the directory to clone the git repo to, should be an absolute path, must have write access
-    -e, --environment <env>         the environment you want to target
-    -c, --commit-message <message>  commit message to use when changes are made
+    -r, --repo <url>                REQUIRED - Git repo to store kibana4 data
+    -s, --elasticsearch-url <url>   REQUIRED - Elasticsearch HTTP url you want to target
+    -d, --clone-directory <path>    RECOMMENDED - The directory to clone the git repo to. Should be an absolute path, must have write access.
+    -e, --environment <env>         The environment you want to target.  Alphanumeric only, no whitespace.  Default is "default"
+    -c, --commit-message <message>  Commit message to use when changes are made.  Default is "Backing up %e", where %e is the environment.
+    -i, --index <name>              The name of the elasticsearch index you are using for kibana.  Default ".kibana"
 ```
 
 # Other Stuff
