@@ -7,7 +7,7 @@ kibana4-backup
 
 [![NPM](https://nodei.co/npm/kibana4-backup.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kibana4-backup/)
 
-Backup, restore, and deploy changes to Kibana 4 configs, index-patterns, dashboards, searches, and visualizations.  *It also works for Kibana 3*.  We created the project before realizing it though, hence the name :).
+Backup, restore, and deploy changes to Kibana 4 configs, index-patterns, dashboards, searches, and visualizations.  **It also works for Kibana 3**.  We created the project before realizing it though, hence the name :).
 
 The intention of kibana4-backup is to make sure any changes you make to your Kibana 4 instance will be backed up in source control, with the ability to easily restore them.  Furthermore, it provides a way to deploy changes from source control, to specific environments.  Deploying a dashboard from test to prod is as easy as copying a file into a different folder and commiting the change.
 
