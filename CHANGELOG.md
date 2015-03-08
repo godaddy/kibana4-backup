@@ -1,3 +1,9 @@
+## 0.3.1 (March 7, 2015)
+
+Bug Fixes:
+
+  - Fixed issue where things would get confused when running backup for more than one index on the same box
+
 ## 0.3.0 (March 7, 2015)
 
 Features:
