@@ -1,6 +1,6 @@
 {
   "name": "kibana4-backup",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Backup, restore, and deploy changes to your Kibana4 or Kibana3 instances",
   "main": "kibana4-backup.js",
   "scripts": {

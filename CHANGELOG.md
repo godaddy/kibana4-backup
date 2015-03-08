@@ -1,3 +1,9 @@
+## 0.3.2 (March 7, 2015)
+
+Bug Fixes:
+
+  - Fixed issue where deploy files were not removed after deployment
+
 ## 0.3.1 (March 7, 2015)
 
 Bug Fixes:
