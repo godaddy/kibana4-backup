@@ -32,7 +32,7 @@ The commands above will install kibana4-backup and run it once, targetting the s
 kibana4-backup \
     -s http://mytestelasticsearch.com:9200 \
     -r git@github.com:myorg/myrepo.git \
-    -e test
+    -e test \
     -d /tmp/kibana4-backup
 ```
 
