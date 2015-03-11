@@ -30,10 +30,10 @@ The commands above will install kibana4-backup and run it once, targetting the s
 
 ```
 kibana4-backup \
-    -s http://mytestelasticsearch.com:9200 \
-    -r git@github.com:myorg/myrepo.git \
-    -e test \
-    -d /tmp/kibana4-backup
+  -s http://mytestelasticsearch.com:9200 \
+  -r git@github.com:myorg/myrepo.git \
+  -e test \
+  -d /tmp/kibana4-backup
 ```
 
 The command above will run kibana4-backup, targetting a specific environment.  If you have multiple elasticsearch instances in different environments, you can move kibana4 dashboards, searches, and visualizations between environments easily using the deploy feature.  Each environment will exist as a different folder in the git repo specified.  Specifying the environment will cause kibana4-backup to target the related environment folder for restore/deploy/backup operations.
@@ -51,6 +51,24 @@ The deploy logic is the next step in the process.  Any files in the deploy folde
 ## Backup
 
 The last step in the process is to perform the backup. The .kibana index will be pulled from elasticsearch and any new configs/index-patterns/dashboards/searches/visualizations will be saved to the correct environment/backup folder.  The changes will then be committed and pushed to the specified git repo.
+
+## Include kibana4-backup in your project
+
+You can also add kibana4-backup as a dependency in your project and use it programatically
+
+```javascript
+var kibanaBackup = require('kibana4-backup');
+
+kibanaBackup({
+  repo: 'git@github.com:myorg/myrepo.git',
+  elasticsearchUrl: 'http://myelasticsearch.com:9200',
+  cloneDirectory: '/tmp/kibana4-backup',
+  environment: 'test'
+}, function(err, results){
+  if(err) throw err;
+  console.log(results); //not very useful data at the moment
+});
+```
 
 # Options
 

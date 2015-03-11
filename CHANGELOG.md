@@ -1,3 +1,9 @@
+## 0.4.0 (March 10, 2015)
+
+Features:
+
+  - Refactored config to allow programatic use of kibana4-backup.
+
 ## 0.3.2 (March 7, 2015)
 
 Bug Fixes:
