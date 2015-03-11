@@ -3,9 +3,21 @@
 'use strict';
 
 var path = require('path');
+var program = require('commander');
 var backup = require(path.resolve(__dirname, '../kibana4-backup'));
 
-backup(function(err){
+//Default options handled in ./lib/config
+program
+  .version(require('../package.json').version)
+  .option('-r, --repo <url>', 'REQUIRED - Git repo to store kibana4 data')
+  .option('-s, --elasticsearch-url <url>', 'REQUIRED - Elasticsearch HTTP url you want to target')
+  .option('-d, --clone-directory <path>', 'RECOMMENDED - The directory to clone the git repo to. Should be an absolute path, must have write access.')
+  .option('-e, --environment <env>', 'The environment you want to target.  Alphanumeric only, no whitespace.  Default is "default"')
+  .option('-c, --commit-message <message>', 'Commit message to use when changes are made.  Default is "Backing up %i in %e", where %i is the index and %e is the environment.')
+  .option('-i, --index <name>', 'The name of the elasticsearch index you are using for kibana.  Default ".kibana"')
+  .parse(process.argv);
+
+backup(program, function(err){
   if(err)
     process.exit(1);
   process.exit(0);
