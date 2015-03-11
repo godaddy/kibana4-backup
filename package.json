@@ -1,6 +1,6 @@
 {
   "name": "kibana4-backup",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Backup, restore, and deploy changes to your Kibana4 or Kibana3 instances",
   "main": "kibana4-backup.js",
   "scripts": {
@@ -33,7 +33,7 @@
     "async": "^0.9.0",
     "commander": "^2.6.0",
     "debug": "^2.1.2",
-    "elasticdump": "^0.11.0",
+    "elasticdump": "^0.12.0",
     "fs-extra": "^0.16.4",
     "lodash": "^3.3.1",
     "request": "^2.53.0",
