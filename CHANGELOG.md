@@ -1,3 +1,9 @@
+## 0.4.1 (March 10, 2015)
+
+Bug Fixes:
+
+  - Bumped elasticdump dependency to 0.12.0 to fix windows path issues
+
 ## 0.4.0 (March 10, 2015)
 
 Features:
