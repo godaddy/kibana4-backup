@@ -12,7 +12,7 @@ program
   .option('-r, --repo <url>', 'REQUIRED - Git repo to store kibana4 data')
   .option('-s, --elasticsearch-url <url>', 'REQUIRED - Elasticsearch HTTP url you want to target')
   .option('-d, --clone-directory <path>', 'RECOMMENDED - The directory to clone the git repo to. Should be an absolute path, must have write access.')
-  .option('-e, --environment <env>', 'The environment you want to target.  Alphanumeric only, no whitespace.  Default is "default"')
+  .option('-e, --environment <env>', 'The environment you want to target.  Alphanumeric only, including dashes and underscores; no whitespace.  Default is "default"')
   .option('-c, --commit-message <message>', 'Commit message to use when changes are made.  Default is "Backing up %i in %e", where %i is the index and %e is the environment.')
   .option('-i, --index <name>', 'The name of the elasticsearch index you are using for kibana.  Default ".kibana"')
   .parse(process.argv);

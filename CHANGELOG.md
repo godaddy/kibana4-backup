@@ -1,3 +1,9 @@
+## 0.4.2 (May 15, 2015)
+
+Bug Fixes:
+
+  - Allowing dashes and underscores in environment (-e) names
+
 ## 0.4.1 (March 10, 2015)
 
 Bug Fixes:

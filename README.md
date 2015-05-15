@@ -73,7 +73,7 @@ kibanaBackup({
 # Options
 
 ```
-kibana4-backup [options]
+ Usage: kibana4-backup [options]
 
   Options:
 
@@ -82,8 +82,8 @@ kibana4-backup [options]
     -r, --repo <url>                REQUIRED - Git repo to store kibana4 data
     -s, --elasticsearch-url <url>   REQUIRED - Elasticsearch HTTP url you want to target
     -d, --clone-directory <path>    RECOMMENDED - The directory to clone the git repo to. Should be an absolute path, must have write access.
-    -e, --environment <env>         The environment you want to target.  Alphanumeric only, no whitespace.  Default is "default"
-    -c, --commit-message <message>  Commit message to use when changes are made.  Default is "Backing up %e", where %e is the environment.
+    -e, --environment <env>         The environment you want to target.  Alphanumeric only, including dashes and underscores; no whitespace.  Default is "default"
+    -c, --commit-message <message>  Commit message to use when changes are made.  Default is "Backing up %i in %e", where %i is the index and %e is the environment.
     -i, --index <name>              The name of the elasticsearch index you are using for kibana.  Default ".kibana"
 ```
 
