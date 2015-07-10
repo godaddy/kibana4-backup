@@ -13,7 +13,7 @@ The intention of kibana4-backup is to make sure any changes you make to your Kib
 
 # 1.0 Breaking Change
 
-File names will now be written as such (pre sanitation): <type>_<id>_<md5_checksum of id>.  This is to help combat the issue of duplicate names for different types, as well as case sensitivity issues on OSX.  It is recommended that you start synching to a new repository when upgrading to 1.0.0 (or clean out the old one before running the first sync with 1.0.0).  If you don't, all your existing Kibana objects will be duplicated with the new filename syntax.
+File names will now be written as such (pre sanitation): `<type>_<id>_<md5_checksum of id>`.  This is to help combat the issue of duplicate names for different types, as well as case sensitivity issues on OSX.  It is recommended that you start synching to a new repository when upgrading to 1.0.0 (or clean out the old one before running the first sync with 1.0.0).  If you don't, all your existing Kibana objects will be duplicated with the new filename syntax.
 
 # Prerequistes
 
