@@ -1,3 +1,14 @@
+## 1.0.0 (July 10, 2015)
+
+Breaking Change:
+
+  - New filename syntax
+
+Bug Fixes:
+
+  - Fixed issue with duplicate kibana ids between different types (i.e. a search and visualization having the same id)
+  - Fixed case sesitivity issue for OSX users, filenames are now saved unique and case-insensitive.
+
 ## 0.4.2 (May 15, 2015)
 
 Bug Fixes:

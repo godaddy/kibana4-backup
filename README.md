@@ -1,7 +1,7 @@
 kibana4-backup
 ==============
 
-**WORK IN PROGRESS.  Stability: 1 - Experimental**
+**WORK IN PROGRESS.  Stability: 2 - Unstable**
 
 [![Build Status](https://api.travis-ci.org/godaddy/kibana4-backup.png)](https://travis-ci.org/godaddy/kibana4-backup)
 
@@ -10,6 +10,10 @@ kibana4-backup
 Backup, restore, and deploy changes to Kibana 4 configs, index-patterns, dashboards, searches, and visualizations.  **It also works for Kibana 3**.  We created the project before realizing it though, hence the name :).
 
 The intention of kibana4-backup is to make sure any changes you make to your Kibana 4 instance will be backed up in source control, with the ability to easily restore them.  Furthermore, it provides a way to deploy changes from source control, to specific environments.  Deploying a dashboard from test to prod is as easy as copying a file into a different folder and commiting the change.
+
+# 1.0 Breaking Change
+
+File names will now be written as such (pre sanitation): <type>_<id>_<md5_checksum of id>.  This is to help combat the issue of duplicate names for different types, as well as case sensitivity issues on OSX.  It is recommended that you start synching to a new repository when upgrading to 1.0.0 (or clean out the old one before running the first sync with 1.0.0).  If you don't, all your existing Kibana objects will be duplicated with the new filename syntax.
 
 # Prerequistes
 
