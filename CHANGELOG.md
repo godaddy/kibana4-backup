@@ -1,3 +1,10 @@
+## 1.1.0 (September 11, 2015)
+
+Features:
+
+  - Added an `-x` argument, which will force delete and re-clone the git repository.  This can slow down kibana4-backup, but it can help prevent the kibana4-backup from getting stuck at a merge conflict (which can happen when backing up multiple environments to the same git repo).
+  - Added an `-o` argument, which will allow you to restore your Kibana index to a specific point in time using the commit sha1.  This will deploy everything in the backup directory to the Kibana index and then update the latest master with the restored state.
+
 ## 1.0.0 (July 10, 2015)
 
 Breaking Change:

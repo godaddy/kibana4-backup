@@ -48,6 +48,8 @@ We leave process management up to you.  Running kibana4-backup from the command 
 
 The restore logic is the first step in the process.  If the .kibana index does not exist, the latest backup files from the repo/environment you specify will be PUT'd to the index.  If the .kibana index does exist, this step is skipped.
 
+You can also use the `-o` argument to explicitly restore to a specific git commit sha1.  Using `-o` will deploy everything in the backup directory to the elasticsearch index.
+
 ## Deploy
 
 The deploy logic is the next step in the process.  Any files in the deploy folder under the specified environment are read and PUT'd to the .kibana index, and deleted.  If there are no files, this step is skipped.
@@ -77,7 +79,7 @@ kibanaBackup({
 # Options
 
 ```
- Usage: kibana4-backup [options]
+  Usage: kibana4-backup [options]
 
   Options:
 
@@ -89,6 +91,8 @@ kibanaBackup({
     -e, --environment <env>         The environment you want to target.  Alphanumeric only, including dashes and underscores; no whitespace.  Default is "default"
     -c, --commit-message <message>  Commit message to use when changes are made.  Default is "Backing up %i in %e", where %i is the index and %e is the environment.
     -i, --index <name>              The name of the elasticsearch index you are using for kibana.  Default ".kibana"
+    -o, --restore-sha1 <sha1>       Deploy all backup files at the provided git sha1.  Useful for restoring kibana to a previous state.
+    -x, --clean                     This will remove the clone directory and force a re-clone.
 ```
 
 # Other Stuff
