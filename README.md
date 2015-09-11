@@ -48,7 +48,7 @@ We leave process management up to you.  Running kibana4-backup from the command 
 
 The restore logic is the first step in the process.  If the .kibana index does not exist, the latest backup files from the repo/environment you specify will be PUT'd to the index.  If the .kibana index does exist, this step is skipped.
 
-You can also use the `-o` argument to explicitly restore to a specific git commit sha1.  Using `-o` will deploy everything in the backup directory to the elasticsearch index.
+You can also use the `-o` argument to explicitly restore to a specific git commit sha1.  Using `-o` will deploy everything in the backup directory to the Kibana index.
 
 ## Deploy
 
