@@ -15,6 +15,8 @@ program
   .option('-e, --environment <env>', 'The environment you want to target.  Alphanumeric only, including dashes and underscores; no whitespace.  Default is "default"')
   .option('-c, --commit-message <message>', 'Commit message to use when changes are made.  Default is "Backing up %i in %e", where %i is the index and %e is the environment.')
   .option('-i, --index <name>', 'The name of the elasticsearch index you are using for kibana.  Default ".kibana"')
+  .option('-o, --restore-sha1 <sha1>', 'Deploy all backup files at the provided git sha1.  Useful for restoring kibana to a previous state.')
+  .option('-x, --clean', 'This will remove the clone directory and force a re-clone.')
   .parse(process.argv);
 
 backup(program, function(err){
