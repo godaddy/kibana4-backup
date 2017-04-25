@@ -1,3 +1,13 @@
+## 2.0.0 (April 25, 2017)
+
+Features:
+
+  - Updated all dependent packages. kibana4-backup now supports the latest elasticsearch versions (tested with 5.3.0)
+
+Breaking Change:
+
+  - No longer supporting versions of node older than 4.0.0
+
 ## 1.1.0 (September 11, 2015)
 
 Features:
