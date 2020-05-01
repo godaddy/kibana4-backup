@@ -4,7 +4,9 @@
   "description": "Backup, restore, and deploy changes to your Kibana instances",
   "main": "kibana4-backup.js",
   "scripts": {
-    "test": "jshint kibana4-backup.js lib"
+    "test": "jshint kibana4-backup.js lib",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "bin": {
     "kibana4-backup": "./bin/kibana4-backup"
@@ -38,9 +40,11 @@
     "lodash": "^4.17.4",
     "request": "^2.81.0",
     "sanitize-filename": "^1.6.1",
-    "simple-git": "^1.70.0"
+    "simple-git": "^1.70.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "jshint": "^2.9.4"
-  }
+  },
+  "snyk": true
 }
