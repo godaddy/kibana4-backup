@@ -33,7 +33,7 @@
     "async": "^2.3.0",
     "commander": "^2.9.0",
     "debug": "^2.6.3",
-    "elasticdump": "^3.1.0",
+    "elasticdump": "^6.81.0",
     "fs-extra": "^2.1.2",
     "lodash": "^4.17.4",
     "request": "^2.81.0",
