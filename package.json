@@ -38,7 +38,7 @@
     "lodash": "^4.17.4",
     "request": "^2.81.0",
     "sanitize-filename": "^1.6.1",
-    "simple-git": "^1.70.0"
+    "simple-git": "^3.5.0"
   },
   "devDependencies": {
     "jshint": "^2.9.4"
