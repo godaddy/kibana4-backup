@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/godaddy/kibana4-backup",
   "dependencies": {
-    "async": "^2.3.0",
+    "async": "^3.2.2",
     "commander": "^2.9.0",
     "debug": "^2.6.3",
     "elasticdump": "^3.1.0",
